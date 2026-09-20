@@ -1,0 +1,25 @@
+Mason Ellington  
+Email: mmtellington@gmail.com  
+Phone: (319) 931-4756  
+Location: Birmingham, IA  
+
+September 15, 2026
+
+Hiring Manager  
+Workiva  
+
+Dear Hiring Manager,
+
+I am applying for the Software Engineer Intern position at Workiva. I am pursuing an A.A.S. in Software Development at Indian Hills Community College while working as an IT Department Intern at Southern Iowa Electric Cooperative. Through my education, internship, and independent projects, I have developed practical experience in application development, technical support, databases, and maintaining systems that support daily operations.
+
+At Southern Iowa Electric Cooperative, I develop and maintain internal web applications using Rust, JavaScript, HTML, and SQL. I troubleshoot application features, server configurations, and technology issues while supporting internal servers, databases, deployments, and system maintenance. I also collaborate with employees to identify requirements and improve internal applications and workflows. This experience has strengthened my ability to understand user needs, solve technical problems, and take responsibility for the reliability of the systems I support.
+
+My coursework has provided experience with Java, JavaScript, TypeScript, C#, Python, object-oriented programming, Git and GitHub, JUnit, relational databases, AWS EC2, and Agile methods. Through independent projects, I have developed JavaScript and Python automation applications with ticketing, permissions, and role-management features backed by SQLite and PostgreSQL. I have also created object-oriented C# plugins and supporting backend systems for license validation and application monitoring. These experiences have helped me become comfortable learning unfamiliar technologies and contributing across different parts of an application.
+
+I am particularly interested in Workiva because the internship offers opportunities to contribute to frontend and backend development while learning from experienced engineers. Workiva’s emphasis on ownership, collaboration, continuous improvement, code quality, and meaningful software aligns with the kind of engineer I am working to become.
+
+Thank you for considering my application. I would welcome the opportunity to discuss how my education, technical experience, and willingness to learn could contribute to Workiva’s engineering team.
+
+Sincerely,
+
+Mason Ellington

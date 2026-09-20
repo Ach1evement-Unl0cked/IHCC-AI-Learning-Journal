@@ -1,0 +1,26 @@
+Mason Ellington  
+Email: mmtellington@gmail.com  
+Phone: (319) 931-4756  
+Location: Birmingham, IA  
+
+September 15, 2026
+
+Hiring Manager  
+Federal Home Loan Bank of Des Moines  
+Des Moines, IA  
+
+Dear Hiring Manager,
+
+I am applying for the Information Technology Co-Op position at the Federal Home Loan Bank of Des Moines. I am pursuing an A.A.S. in Software Development at Indian Hills Community College while working as an IT Department Intern at Southern Iowa Electric Cooperative. My education and practical IT experience have provided a foundation in application development, testing, troubleshooting, databases, and supporting technology used in daily business operations.
+
+At Southern Iowa Electric Cooperative, I develop and maintain internal applications that support operational needs. I troubleshoot applications, server configurations, and technology issues while supporting internal servers, databases, deployments, and system maintenance. I also collaborate with employees to identify requirements and possible improvements to internal applications and workflows. This experience has taught me to communicate with technical and nontechnical users, investigate problems carefully, and consider reliability when implementing changes.
+
+My coursework has provided experience with Java, JUnit, Microsoft SQL Server, SQL, C#, JavaScript, TypeScript, object-oriented programming, database concepts, Git and GitHub, and Agile methods. My independent development projects have also involved application maintenance, automation, relational databases, backend services, testing, and monitoring. These experiences would help me contribute to application analysis, development, technical support, and system-maintenance activities within the Bank’s IT department.
+
+I am interested in this opportunity because it would allow me to apply my classroom knowledge while learning how dependable technology supports a financial institution and its members. I would bring attention to detail, curiosity, clear communication, and a willingness to learn from both technical and cross-functional team members.
+
+Thank you for considering my application. I would welcome the opportunity to discuss how my application-development experience, technical foundation, and commitment to continuous learning could contribute to the Federal Home Loan Bank of Des Moines.
+
+Sincerely,
+
+Mason Ellington
