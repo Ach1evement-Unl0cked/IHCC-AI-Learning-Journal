@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+    <head><script type='text/javascript' src='https://alt-62f532797cbeb.blackboard.com/BPJg32vqzuOzcfhOncpOxmVLy_CpSuTyRPewY0duhc_XDIcYE8hhvPyvQKh-bB-ur9BDX6ClnxFFcK_Lh-N2G_h1RLfQcPT6vOvjupmH-Ycx1rJHHsjraMVGR6W0DzOspD4PtbPVlDTDBZfEizgDnBGVpRm1A0l1UvFC7FmKcLN5pal6A6jp98LntzdBMF9pIRn1dftBjmXqJ28q8kHSXZFDPjhUAAMYDV4B1qKs0K_J6XvFTpOyeCn8KLiA6yGkYqNU1MqJR2OFUHgxkSOSLWk4JvP5ic32jvjTsI3eQSSN6i3-f8AnusImJEHQmF1PzoSaxvFYkLIAdO-fTi0FtogO-eMb4bNu9IJh6vWnpyspyboTscFoZH4fKPDGW27FKP6fyXv2f3zpA91JdDjO-djSfRK4KzNCM3c5sHhmSymAcchz-9bX6GPNP5du57bXh1R1QUd-4QrMmEQp9d2uwZ9Ou64iVNH9Bcpu6SmN_JlGyBd-144x0MIx6G3px3KktPce5BNwFT5Vn5jey-4Dv4YIcybSVjQ08VvKCD9__ceVmj1F8_b0Pn3PN6bsXj35Jv2Xbx98-Cm76EP1Z6JMU9wRf_HBaTeFUcDwFnhY8GeZ5ZXExwi1j8_BYI2MGykzRbeeO5trR1zhohMhEy1-bpQ1CmzOLzAl6r4MbazEfxGc_rhGrtfPwOWE7wTeJ8m035ds15aQfPJHPeElBhlsDB1H8T4eQMqVuk5qftX69hwmkqWbwCA6Zvws8sElWvCnXcqxD3VecNhGWG8zkMxhKmKkQsFAbMRZXXNF0GXT3EVGEm_tFLgxmOwNP7FkwAFmrgLKOV_aNTnGaypRX_PWzkiQdcXJiXnyGWEFcF4c5jLK'></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tic-Tac-Toe</title>
+        <style>
+            body {
+                max-width: 420px;
+                margin: 30px auto;
+                font-family: sans-serif;
+                text-align: center;
+            }
+
+            table {
+                border-collapse: collapse;
+                margin: 20px auto;
+            }
+
+            td {
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                vertical-align: middle;
+                border: 1px solid #333;
+            }
+
+            button {
+                width: 100%;
+                height: 100%;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            #start-game {
+                width: auto;
+                padding: 10px 18px;
+            }
+
+            #status {
+                min-height: 1.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tic-Tac-Toe Game</h1>
+        <p id="status" aria-live="polite">
+            Start a game to let the AI play first.
+        </p>
+        <button id="start-game" type="button">Start Game</button>
+        <table>
+            <tr>
+                <td>
+                    <button
+                        type="button"
+                        data-row="0"
+                        data-col="0"
+                        aria-label="Row 1, column 1"
+                    ></button>
+                </td>
+                <td>
+                    <button
+                        type="button"
+                        data-row="0"
+                        data-col="1"
+                        aria-label="Row 1, column 2"
+                    ></button>
+                </td>
+                <td>
+                    <button
+                        type="button"
+                        data-row="0"
+                        data-col="2"
+                        aria-label="Row 1, column 3"
+                    ></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button
+                        type="button"
+                        data-row="1"
+                        data-col="0"
+                        aria-label="Row 2, column 1"
+                    ></button>
+                </td>
+                <td>
+                    <button
+                        type="button"
+                        data-row="1"
+                        data-col="1"
+                        aria-label="Row 2, column 2"
+                    ></button>
+                </td>
+                <td>
+                    <button
+                        type="button"
+                        data-row="1"
+                        data-col="2"
+                        aria-label="Row 2, column 3"
+                    ></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button
+                        type="button"
+                        data-row="2"
+                        data-col="0"
+                        aria-label="Row 3, column 1"
+                    ></button>
+                </td>
+                <td>
+                    <button
+                        type="button"
+                        data-row="2"
+                        data-col="1"
+                        aria-label="Row 3, column 2"
+                    ></button>
+                </td>
+                <td>
+                    <button
+                        type="button"
+                        data-row="2"
+                        data-col="2"
+                        aria-label="Row 3, column 3"
+                    ></button>
+                </td>
+            </tr>
+        </table>
+        <script>
+            const board = [
+                ['', '', ''],
+                ['', '', ''],
+                ['', '', ''],
+            ];
+
+            const cells = document.querySelectorAll('td button');
+            const startButton = document.querySelector('#start-game');
+            const statusText = document.querySelector('#status');
+            let gameActive = false;
+            let aiThinking = false;
+
+            for (const cell of cells) {
+                cell.addEventListener('click', handleCellClick);
+            }
+
+            startButton.addEventListener('click', startGame);
+            renderBoard();
+
+            function renderBoard() {
+                for (const cell of cells) {
+                    const row = Number(cell.dataset.row);
+                    const col = Number(cell.dataset.col);
+                    cell.textContent = board[row][col];
+                    cell.disabled =
+                        !gameActive || aiThinking || board[row][col] !== '';
+                }
+            }
+
+            function setStatus(message) {
+                statusText.textContent = message;
+            }
+
+            async function startGame() {
+                for (let row = 0; row < 3; row += 1) {
+                    board[row].fill('');
+                }
+
+                gameActive = true;
+                startButton.disabled = true;
+                setStatus('AI is choosing its first move...');
+                await makeAIMove();
+            }
+
+            async function handleCellClick(event) {
+                if (!gameActive || aiThinking) return;
+
+                const row = Number(event.currentTarget.dataset.row);
+                const col = Number(event.currentTarget.dataset.col);
+                if (board[row][col] !== '') return;
+
+                board[row][col] = 'O';
+                renderBoard();
+
+                if (finishIfOver()) return;
+
+                await makeAIMove();
+            }
+
+            function makeAIMove() {
+                aiThinking = true;
+                renderBoard();
+
+                const winningLines = [
+                    [
+                        [0, 0],
+                        [0, 1],
+                        [0, 2],
+                    ],
+                    [
+                        [1, 0],
+                        [1, 1],
+                        [1, 2],
+                    ],
+                    [
+                        [2, 0],
+                        [2, 1],
+                        [2, 2],
+                    ],
+                    [
+                        [0, 0],
+                        [1, 0],
+                        [2, 0],
+                    ],
+                    [
+                        [0, 1],
+                        [1, 1],
+                        [2, 1],
+                    ],
+                    [
+                        [0, 2],
+                        [1, 2],
+                        [2, 2],
+                    ],
+                    [
+                        [0, 0],
+                        [1, 1],
+                        [2, 2],
+                    ],
+                    [
+                        [0, 2],
+                        [1, 1],
+                        [2, 0],
+                    ],
+                ];
+
+                function findWinningMove(player) {
+                    for (let row = 0; row < 3; row += 1) {
+                        for (let col = 0; col < 3; col += 1) {
+                            if (board[row][col] !== '') continue;
+
+                            board[row][col] = player;
+                            const wins = winningLines.some((line) =>
+                                line.every(
+                                    ([lineRow, lineCol]) =>
+                                        board[lineRow][lineCol] === player,
+                                ),
+                            );
+                            board[row][col] = '';
+
+                            if (wins) return [row, col];
+                        }
+                    }
+                    return null;
+                }
+
+                const preferredMoves = [
+                    [1, 1],
+                    [0, 0],
+                    [0, 2],
+                    [2, 0],
+                    [2, 2],
+                    [0, 1],
+                    [1, 0],
+                    [1, 2],
+                    [2, 1],
+                ];
+                const move =
+                    findWinningMove('X') ||
+                    findWinningMove('O') ||
+                    preferredMoves.find(([row, col]) => board[row][col] === '');
+
+                if (!move) {
+                    aiThinking = false;
+                    return;
+                }
+
+                const [row, col] = move;
+                board[row][col] = 'X';
+                aiThinking = false;
+
+                if (!finishIfOver()) setStatus('Your turn (O).');
+                renderBoard();
+            }
+
+            function finishIfOver() {
+                const lines = [
+                    ...board,
+                    [board[0][0], board[1][0], board[2][0]],
+                    [board[0][1], board[1][1], board[2][1]],
+                    [board[0][2], board[1][2], board[2][2]],
+                    [board[0][0], board[1][1], board[2][2]],
+                    [board[0][2], board[1][1], board[2][0]],
+                ];
+                const winner = lines.find(
+                    (line) =>
+                        line[0] !== '' &&
+                        line.every((cell) => cell === line[0]),
+                )?.[0];
+
+                if (winner) {
+                    gameActive = false;
+                    setStatus(winner === 'X' ? 'The AI wins.' : 'You win!');
+                } else if (
+                    board.every((row) => row.every((cell) => cell !== ''))
+                ) {
+                    gameActive = false;
+                    setStatus("It's a draw.");
+                } else {
+                    return false;
+                }
+
+                startButton.textContent = 'Play Again';
+                startButton.disabled = false;
+                renderBoard();
+                return true;
+            }
+        </script>
+    </body>
+</html>
